@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Alert, Button, TextInput, View, StyleSheet } from 'react-native';
-import DashboardScreen from './DashboardScreen';
+
 
 export default class LoginScreen extends Component {
   state = {
@@ -11,6 +11,7 @@ export default class LoginScreen extends Component {
 
   onLogin = () => {
     alert(this.state.username)
+    this.props.navigation.navigate('DashboardScreen');
     //fetch('http://localhost:3000/api/v1/companies/get')
       //.then((response) => {return response.json()})
       //.then((data) => {this.setState({ companies: data }) });

@@ -1,5 +1,6 @@
 import React,{ Component } from 'react'
 import { Alert, Button, TextInput, View, StyleSheet } from 'react-native';
+
 import AddCompany from './AddCompany'
 class DashboardScreen extends Component{
 
