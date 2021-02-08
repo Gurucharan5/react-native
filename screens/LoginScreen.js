@@ -3,21 +3,17 @@ import { Alert, Button, TextInput, View, StyleSheet } from 'react-native';
 import DashboardScreen from './DashboardScreen';
 
 export default class LoginScreen extends Component {
-  constructor(props) {
-    super(props);
-    
-    this.state = {
-      username: '',
-      password: '',
-    };
+  state = {
+    username: '',
+    password: '',     
+    companies: {}
   }
-  
-  onLogin() {
-    const { username, password } = this.state;
 
-   
-
-   // Alert.alert('Credentials', `${username} + ${password}`);
+  onLogin = () => {
+    alert(this.state.username)
+    //fetch('http://localhost:3000/api/v1/companies/get')
+      //.then((response) => {return response.json()})
+      //.then((data) => {this.setState({ companies: data }) });
   }
 
   render() {
@@ -40,7 +36,7 @@ export default class LoginScreen extends Component {
         <Button
           title={'Login'}
           style={styles.input}
-          onPress={()=> navigation.navigate('DashboardScreen',{username:username})}
+          onPress={this.onLogin}
         />
       </View>
     );

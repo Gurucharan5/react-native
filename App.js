@@ -10,13 +10,8 @@ import DashboardScreen from './screens/DashboardScreen';
 function HomeScreen({ navigation }) {
   return (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button 
-      title="Login Here"
-      onPress={()=> navigation.navigate('LoginScreen')}
-    />
     <Button 
-    title="DasboardScreen"
+    title="Dasboard Screen"
     onPress={()=> navigation.navigate('DashboardScreen')}
     />
       </View>
@@ -28,7 +23,7 @@ const Stack = createStackNavigator();
 function App() {
   return (
    <NavigationContainer>
-     <Stack.Navigator initialRouteName="Home">
+     <Stack.Navigator initialRouteName="LoginScreen">
        <Stack.Screen name="Home" component={HomeScreen}/>
        <Stack.Screen name="LoginScreen" component={LoginScreen}/>
        <Stack.Screen name="DashboardScreen" component={DashboardScreen} />
