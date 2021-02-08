@@ -4,6 +4,7 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import  LoginScreen  from './screens/LoginScreen';
+import DashboardScreen from './screens/DashboardScreen';
  
 
 function HomeScreen({ navigation }) {
@@ -13,6 +14,10 @@ function HomeScreen({ navigation }) {
       <Button 
       title="Login Here"
       onPress={()=> navigation.navigate('LoginScreen')}
+    />
+    <Button 
+    title="DasboardScreen"
+    onPress={()=> navigation.navigate('DashboardScreen')}
     />
       </View>
   );
@@ -26,6 +31,7 @@ function App() {
      <Stack.Navigator initialRouteName="Home">
        <Stack.Screen name="Home" component={HomeScreen}/>
        <Stack.Screen name="LoginScreen" component={LoginScreen}/>
+       <Stack.Screen name="DashboardScreen" component={DashboardScreen} />
      </Stack.Navigator>
    </NavigationContainer>
   );

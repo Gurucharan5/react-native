@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Alert, Button, TextInput, View, StyleSheet } from 'react-native';
+import DashboardScreen from './DashboardScreen';
 
 export default class LoginScreen extends Component {
   constructor(props) {
@@ -14,7 +15,9 @@ export default class LoginScreen extends Component {
   onLogin() {
     const { username, password } = this.state;
 
-    Alert.alert('Credentials', `${username} + ${password}`);
+   
+
+   // Alert.alert('Credentials', `${username} + ${password}`);
   }
 
   render() {
@@ -37,7 +40,7 @@ export default class LoginScreen extends Component {
         <Button
           title={'Login'}
           style={styles.input}
-          onPress={this.onLogin.bind(this)}
+          onPress={()=> navigation.navigate('DashboardScreen',{username:username})}
         />
       </View>
     );
